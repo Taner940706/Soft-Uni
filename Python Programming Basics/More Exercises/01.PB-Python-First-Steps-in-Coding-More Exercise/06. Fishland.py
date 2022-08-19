@@ -1,0 +1,10 @@
+price_skum=float(input())
+price_caca=float(input())
+kg_pala=float(input())
+kg_saf=float(input())
+kg_midi=int(input())
+pala=kg_pala*1.6*price_skum
+saf=kg_saf*price_caca*1.8
+midi=7.50*kg_midi
+res=pala+saf+midi
+print(f'{res:.2f}')
