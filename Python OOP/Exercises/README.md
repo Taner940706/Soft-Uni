@@ -40,4 +40,4 @@
 - Regular Exam
 - Retake Exam
 ## Сертификат
-- ![Certificate](https://softuni.bg/certificates/certificates/converttoimage/131126?code=e557d87d)
+![Certificate](https://softuni.bg/certificates/certificates/converttoimage/131126?code=e557d87d)
