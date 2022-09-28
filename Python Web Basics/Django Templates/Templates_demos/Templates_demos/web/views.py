@@ -28,6 +28,7 @@ def index(request):
             'maria',
             'stamat'
         ],
+        'values': list(range(1,20))
     }
 
     return render(request, 'index.html', context)
@@ -35,3 +36,7 @@ def index(request):
 
 def redirect_to_home(request):
     return redirect('index')
+
+
+def about(request):
+    render(request, 'about.html')

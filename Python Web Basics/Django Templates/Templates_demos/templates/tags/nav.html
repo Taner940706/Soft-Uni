@@ -1,0 +1,10 @@
+<nav>
+    <ul>
+        {% for url in urls %}
+            <li>
+            <a href="{% url url %}">{{ urls }}</a>
+            </li>
+
+        {% endfor %}
+    </ul>
+</nav>

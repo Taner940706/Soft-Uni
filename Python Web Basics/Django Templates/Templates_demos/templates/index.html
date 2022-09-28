@@ -1,15 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base/base.html' %}
+{% load filters %}
+{% load tags %}
 
-<nav >
-    <a href="{% url 'index' %}">Go to home</a>
-    <a href="{% url 'redirect to home' %}">Go redirect</a>
-</nav>
+{% block page_content %}
+
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{#normal nav:#}
+{#<nav >#}
+{#    <a href="{% url 'index' %}">Go to home</a>#}
+{#    <a href="{% url 'redirect to home' %}">Go redirect</a>#}
+{#</nav>#}
+{##}
+{#Tag nav:#}
+{##}
+{#{% app_nav 'index' 'redirect to home' 'about' %}#}
+
+{{ csrf_token }}
 <h1>Original: {{ title }} : {{ value }} : {{ info.address }} : {{ student.get_info }}</h1>
 <h1>Lower: {{ title|lower }} : {{ value }} : {{ info.address }} : {{ student.get_info }}</h1>
 <h1>Upper first char: {{ title|capfirst }} : {{ value }} : {{ info.address }} : {{ student.get_info }}</h1>
@@ -17,7 +30,17 @@
 <h1>Sum number: {{ 2|add:3|add:4 }}</h1>
 <h1>Truncate first 10: {{ title|truncatechars:10 }}</h1>
 <h1>{{ now|date:"d-m-Y" }}</h1>
+<h1>{{ now|add_date_style }}</h1>
 
+<div>
+    original: {{ values }}
+</div>
+<div>
+    Odd: {{ values|odd }}
+</div>
+<p>
+    Info {% student_info student %}
+</p>
 <h2>
     {% if students %}
     {{ students|join:', ' }}
@@ -31,5 +54,9 @@
     <h3>{{ student }}</h3>
     {% endfor %}
 </div>
+
+    <link rel="stylesheet" href="/static/styles.css">
 </body>
 </html>
+
+{% endblock %}
