@@ -1,79 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- Starts Head Section -->
-<head>
-    <link rel="stylesheet"
-          href="/static/css/styles.css">
-    <link rel="icon" type="image/x-icon" href="/static/images/free-30-instagram-stories-icons23_122570.png">
-    <title>Petstagram</title>
-</head>
-<!-- End Head Section -->
+{% extends 'base/base.html' %}
+{% load static %}
 
-<!-- Starts Body Section -->
-<body>
-
-<!-- Starts Header Section with Navigation Bar -->
-<header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <!-- Link to Home Page -->
-                <a href="#">
-                    <img width="50px" src="/static/images/free-30-instagram-stories-icons23_122570.png" alt="img1">
-                </a>
-
-                <!-- Link to Home Page -->
-                <a class="home" href="#">
-                    <i>Petstagram</i>
-                </a>
-            </div>
-
-            <div class="nav-links">
-                <ul class="nav-group">
-                    <li class="nav-item">
-
-                        <!-- Link to Add Pet Page -->
-                        <a href="#">
-                            <i>Add Pet</i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-
-                        <!-- Link to Add Photo Page -->
-                        <a href="#">
-                            <i>Add Photo</i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-
-                        <!-- Link to Login Page -->
-                        <a href="#">
-                            <i>Login</i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-
-                        <!-- Link to Register Page -->
-                        <a href="">
-                            <i>Register</i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-
-                        <!-- Link to Profile Page -->
-                        <a href="#">
-                            <i>Profile</i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-<!-- End Header Section with Navigation Bar -->
-
-<!-- Starts Main Section -->
-<main>
+{% block page_content %}
     <div class="container">
         <div class="col-9">
 
@@ -81,7 +9,7 @@
             <form class="searchbar" method="post">
                 <input type="text" placeholder="Search by pet name...">
                 <button>
-                    <img src="/static/images/search.png" height="18" alt="img2">
+                    <img src="{% static 'images/search.png' %}" height="18" alt="img2">
                 </button>
             </form>
             <!-- End Searchbar Form -->
@@ -98,14 +26,14 @@
                             <div class="profilepic">
                                 <div class="profile_img">
                                     <div class="image">
-                                        <img src="/static/images/person.png" alt="img8">
+                                        <img src="{% static 'images/person.png' %}" alt="img8">
                                     </div>
                                 </div>
                             </div>
                         </a>
                         <h3>
                             <!-- Link to User Profile Page -->
-                            <a href="#">
+                            <a href="{% url 'details user' pk=1 %}">
                                 <!-- if user has first name and last name -->
                                 Diyan Kalaydzhiev
                                 <!-- else -->
@@ -121,7 +49,7 @@
 
                 <!-- Start Pet Photo -->
                 <div class="imgBx" id="place the id of the photo here">
-                    <img src="/static/images/axolotl.jpeg" alt="post" class="cover">
+                    <img src="{% static 'images/axolotl.jpeg' %}" alt="post" class="cover">
                 </div>
                 <!-- End Pet Photo -->
 
@@ -200,7 +128,7 @@
 
                     <!-- Start Tagged Pets -->
                     <!-- Link to First Tagged Pet Details Page-->
-                    <a href="#">
+                    <a href="{% url 'details pet' username='doncho' pet_name='sasho' %}">
                         <p class="message">
                             <b>Sasho</b>
                         </p>
@@ -215,7 +143,7 @@
                     <!-- End Tagged Pets -->
 
                     <!-- Link to Photo Details Page -->
-                    <a href="#">
+                    <a href="{% url 'details pet' username='doncho' pet_name='sasho' %}">
                         <h4 class="details">See details</h4>
                     </a>
 
@@ -250,17 +178,17 @@
                 <div class="top">
                     <!-- User Details and image location -->
                     <div class="userDetails">
-                        <a href="profile details">
+                        <a href="{% url 'details user' pk=1 %}">
                             <div class="profilepic">
                                 <div class="profile_img">
                                     <div class="image">
-                                        <img src="/static/images/person.png" alt="img8">
+                                        <img src="{% static 'images/person.png' %}" alt="img8">
                                     </div>
                                 </div>
                             </div>
                         </a>
                         <h3>
-                            <a href="profile details">
+                            <a href="{% url 'details user' pk=1 %}">
                                 <!-- if user has first name and last name -->
                                 Antonia Hristova
                                 <!-- else -->
@@ -275,7 +203,7 @@
                 </div>
                 <!-- Post image -->
                 <div class="imgBx" id="place the id of the photo here">
-                    <img src="/static/images//dog-on-bed.jpg" alt="post" class="cover">
+                    <img src="{% static 'images/dog-on-bed.jpg' %}" alt="post" class="cover">
                 </div>
                 <!-- -->
 
@@ -348,7 +276,7 @@
                     </a>
 
                     <!-- tagged pets -->
-                    <a href="pet profile">
+                    <a href="{% url 'details pet' username='doncho' pet_name='Bucky' %}">
                         <p class="message">
                             <b>Bucky</b>
                         </p>
@@ -385,17 +313,17 @@
                 <div class="top">
                     <!-- User Details and image location -->
                     <div class="userDetails">
-                        <a href="profile details">
+                        <a href="{% url 'details user' pk=2 %}">
                             <div class="profilepic">
                                 <div class="profile_img">
                                     <div class="image">
-                                        <img src="/static/images/person.png" alt="img8">
+                                        <img src="{% static 'images/person.png' %}" alt="img8">
                                     </div>
                                 </div>
                             </div>
                         </a>
                         <h3>
-                            <a href="profile details">
+                            <a href="{% url 'details user' pk=2 %}">
                                 <!-- if user has first name and last name -->
                                 Steven Ivanov
                                 <!-- else -->
@@ -410,7 +338,7 @@
                 </div>
                 <!-- Post image -->
                 <div class="imgBx" id="place the id of the photo here">
-                    <img src="/static/images/dog-on-road.jpg" alt="post" class="cover">
+                    <img src="{% static 'images/dog-on-road.jpg' %}" alt="post" class="cover">
                 </div>
                 <!-- -->
 
@@ -519,16 +447,4 @@
 
         </div>
     </div>
-</main>
-<!-- End Main Section -->
-
-<!-- Start Footer Section -->
-<div class="footer">
-		<span class="footer-section">
-			© 2022 SOFTUNI WORKSHOP FOR PYTHON WEB MODULE
-		</span>
-</div>
-<!-- End Footer Section -->
-
-</body>
-</html>
+{% endblock %}
