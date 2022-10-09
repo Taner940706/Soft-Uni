@@ -1,12 +1,43 @@
 from django.db import models
+from django.urls import reverse
+
 
 # Create your models here.
 
 
-class Department(models.Model):
+class AuditInfo(models.Model):
+    # make class abstract
+    class Meta:
+        abstract = True
+
+    created_on = models.DateTimeField(
+        auto_now_add=True,  # optional
+    )
+
+    updated_on = models.DateTimeField(
+        auto_now=True  # optionas
+    )
+
+#inheriting abstract class AuditInfo
+class Department(AuditInfo,models.Model):
     name = models.CharField(max_length=15)
 
+    slug = models.SlugField(
+        unique=True,
+        null = True,
+    )
+
+    def get_absolute_url(self):
+        url = reverse('details_department', kwargs={
+            'pk': self.pk}
+                )
+        return url
+
 class Employee(models.Model):
+
+    class Meta:
+        ordering = ("years_of_experience", "first_name",)
+
     #var char (30) => strings with max length 30
     first_name = models.CharField(max_length=30)
 
