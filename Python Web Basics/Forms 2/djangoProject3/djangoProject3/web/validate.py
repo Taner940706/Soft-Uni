@@ -4,7 +4,8 @@ from django.utils.deconstruct import deconstructible
 
 def validate_text(value):
     if '_' in value:
-        raise ValidationError("_ is a invalid symbol")
+        raise ValidationError(message="_ is a invalid symbol",
+                              code='invalid',)
 
 
 def validate_priority(value):
