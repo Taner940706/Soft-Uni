@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <!-- Your Profile Data -->
+    <h1>Your Profile</h1>
+    <div class="expenses-container">
+        <div class="expense-container">
+            <!-- Full Name -->
+            <h2>Aleksandra Raykova</h2>
+            <!-- Profile Image -->
+            <img src="/static/images/user.png" alt="profile pic">
+            <!-- Profile Description -->
+            <!-- Total Items Bought -->
+            <p>Total Items Bought: 2</p>
+            <!-- Budget Left -->
+            <p>Budget Left: 100.00$</p>
+            <div class="right">
+                <!-- Edit Profile Button -->
+                <a class="button edit" href="#">Edit Profile</a>
+                <!-- Delete Profile Button -->
+                <a class="button delete" href="#">Delete Profile</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Your Profile Data -->
+{% endblock %}
