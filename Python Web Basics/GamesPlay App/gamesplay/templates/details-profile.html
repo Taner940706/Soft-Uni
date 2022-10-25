@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% block content_page %}
+    <header>
+
+        <!-- navigation bar-->
+        <h1><a class="home" href="{% url 'index' %}">GamesPlay</a></h1>
+        <nav>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'add game' %}">Create Game</a>
+            <a href="{% url 'details profile' %}">Profile</a>
+        </nav>
+    </header>
+
+    <!-- profile details section -->
+    <section id="game-details">
+        <h1>Profile Details</h1>
+        <div class="info-section">
+            <div class="game-header">
+                <!-- default profile image (if the user does NOT have any)-->
+                <img class="game-img" src="/static/images/default-user.jpg" alt='profile-image'/>
+                <!-- if the user has a profile image -->
+                <img class="game-img" src="" alt='profile-image'/>
+                <!-- user full name (if any) -->
+                <h1>Aleksandra Raykova</h1>
+                <!-- user email -->
+                <p class="text">Email: aleksandra@mail.com</p>
+                <!-- user age -->
+                <p class="text">Age: 28</p>
+                <!-- total number of games -->
+                <p class="text">Total games: 3</p>
+                <!-- average rating for all games -->
+                <p class="text">Average rating: 2.9</p>
+                <!-- Edit/Delete buttons -->
+                <div class="buttons">
+                    <a href="#" class="button">Edit</a>
+                    <a href="#" class="button">Delete</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

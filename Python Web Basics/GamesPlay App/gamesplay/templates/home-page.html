@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% block content_page %}
+    <header>
+
+        <!-- Navigation Bar -->
+        <h1><a class="home" href="{% url 'index' %}">GamesPlay</a></h1>
+        <nav>
+
+            <!-- if the user has not created a profile -->
+            <a href="{% url 'add profile' %}">Create Profile</a>
+
+            <!-- if the user has created a profile -->
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'add game' %}">Create Game</a>
+            <a href="{%url 'details profile' %}">Profile</a>
+        </nav>
+    </header>
+
+    <!-- headlines and default image -->
+    <section id="welcome-world">
+        <div class="welcome-message">
+            <h2>ALL new games are</h2>
+            <h3>Only in GamesPlay</h3>
+        </div>
+        <img src="../static/images/four_slider_img01.png" alt="hero">
+    </section>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% block content_page %}
+<header>
+
+    <!-- navigation bar -->
+    <h1><a class="home" href="{% url 'index' %}">GamesPlay</a></h1>
+    <nav>
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+        <a href="{% url 'add game' %}">Create Game</a>
+        <a href="{% url 'details profile' %}">Profile</a>
+    </nav>
+</header>
+
+<section id="create-page" class="auth">
+    <div class="container">
+        <h1>Are you sure you want to delete your profile?</h1>
+
+        <!-- delete profile form -->
+        <form id='delete'>
+
+            <!-- confirm button -->
+            <input class="btn submit" type="submit" value="Delete">
+        </form>
+        <!-- end delete profile form -->
+
+    </div>
+</section>
+
+{% endblock %}
