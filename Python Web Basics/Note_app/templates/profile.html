@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+        <div class="body">
+            <!--headings-->
+            <h1>Your Profile</h1>
+            <!--end headings-->
+
+            <!--profile details container TODO-->
+            <div class="note-container">
+                <h2>
+                    {{ profiles.first_name }} {{ profiles.last_name }}
+                    <img src="https://www.nicepng.com/png/detail/249-2492113_work-profile-user-default-female-suit-comments-default.png" />
+                </h2>
+                <p>Age: {{ profiles.age }}</p>
+                <div>
+                    <p>All notes: {{ len_note }}</p>
+                </div>
+                <div class="right">
+                    <a class="button delete" href="/delete/4">Delete</a>
+                </div>
+            </div>
+            <!--end profile details container-->
+        </div>
+
+{% endblock %}
