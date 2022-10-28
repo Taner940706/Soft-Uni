@@ -9,7 +9,7 @@
         {% for recipe in recipes %}
             <div class="item">
                 <h2>{{ recipe.title }}</h2>
-                <img class="detail-img" src="{{ recipe.image_url }}" alt="recipe-image">
+                <img class="detail-img" src="media/{{ recipe.image_url }}" alt="recipe-image">
                 <div class="recipe-info">
                      {{ recipe.description }}
                 </div>
