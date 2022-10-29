@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
+    <title>GamesPlay</title>
+</head>
+
+<body>
+<div id="box">
+
+    <header>
+        <!-- navigation bar -->
+        <h1><a class="home" href="#">GamesPlay</a></h1>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Create Game</a>
+            <a href="#">Profile</a>
+        </nav>
+    </header>
+
+    {% block page_content %}
+    {% endblock %}
+
+    <footer>
+        &copy;SoftUni Team 2022. All rights reserved.
+    </footer>
+</div>
+
+</body>
+</html>
