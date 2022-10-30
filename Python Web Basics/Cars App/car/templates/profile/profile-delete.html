@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+  <header>
+        <!-- Navigation Bar -->
+        <h1><a class="index-navigation" href="{% url 'index' %}"><span>C</span>ARS <span>C</span>OLLECTION</a></h1>
+        <nav>
+            <a href="{% url 'catalogue' %}">Catalogue</a>
+            <a href="{% url 'create car' %}">Create Car</a>
+            <a href="{% url 'details profile' %}">Profile</a>
+        </nav>
+    </header>
+
+  <section id="create-page" class="auth">
+
+      <div class="container">
+        <h1>Are you sure you want to delete your profile?</h1>
+          <!-- Delete Profile Form -->
+        <form id='delete' method="POST" action="{% url 'delete profile' %}">
+
+            {% csrf_token %}
+        <!-- Confirm Button -->
+        <input class="btn submit" type="submit" value="Yes">
+
+        </form>
+      </div>
+    <!-- End Delete Profile Form -->
+  </section>
+  <!-- Footer -->
+{% endblock %}
