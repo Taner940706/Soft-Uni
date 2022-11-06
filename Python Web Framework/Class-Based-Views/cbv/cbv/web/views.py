@@ -56,3 +56,15 @@ class ViewTemplateWithListView(views.generic.ListView):
     extra_context = {
         'title': 'List View',
     }
+
+
+class EmployeeCreateView(views.generic.CreateView):
+    template_name = 'create.html'
+    model = Employee
+    fields = '__all__'
+
+
+class EmployeeUpdateView(views.generic.UpdateView):
+    template_name = 'update.html'
+    model = Employee
+    fields = '__all__'
