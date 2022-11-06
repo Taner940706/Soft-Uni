@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test CVB</title>
+</head>
+<body>
+
+<h1>{{ title }}</h1>
+From CBV
+
+<ul>
+    {% for employee in employees %}
+    <li>{{ employee.first_name }} {{ employee.last_name }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
