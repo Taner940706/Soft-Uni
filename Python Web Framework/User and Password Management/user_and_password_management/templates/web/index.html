@@ -1,0 +1,11 @@
+<ul>
+    {% for user in user_list %}
+         <li>
+         {% if user == request.user %}
+             <strong> {{ user.username }}</strong>
+            </li>
+        {% else %}
+             {{ user.username }}
+        {% endif %}
+    {% endfor %}
+</ul>
